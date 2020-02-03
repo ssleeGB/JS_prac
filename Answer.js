@@ -482,3 +482,39 @@ function doubleLetters(word) {
 	}
 	return false	
 }
+
+// Calculate the Total Price of Groceries
+function getTotalPrice (groceries) {
+	let x = groceries.map(item => item.quantity * item.price)
+	  .reduce((total, curr) => total + curr)
+	x = x.toString().split('.')
+	if(x[1]) {
+	  x = x[0] + '.' + x[1].slice(0, 1)
+	}
+	else {
+	  x = x[0]
+	}
+	return parseFloat(x)
+  }
+
+// Numbers in Strings
+function numInStr(arr){
+	let newArr= []
+	
+	for(let i=0;i<arr.length;i++)
+	{
+		for(let j=0;j<arr[i].length;j++)
+		{
+			if(arr[i][j] === ' ')
+			{
+				j++
+			}
+			if(Number(arr[i][j]) == arr[i][j])
+			{
+				j=arr[i].length;
+				newArr.push(arr[i])
+			}
+		}
+	}
+	return newArr
+}
