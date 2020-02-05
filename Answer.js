@@ -518,3 +518,26 @@ function numInStr(arr){
 	}
 	return newArr
 }
+
+// Calculate an Earned Run Average
+function era(er, ip) {
+	let Era = parseFloat(er / (ip / 9));
+	let e = Math.floor(Era * 100) / 100;
+	return e.toFixed(2);
+}
+
+// Frequency Distribution
+function getFrequencies(arr) {
+	let result = {};
+	
+	arr.forEach((element) => {
+		if (result[element]){
+			result[element]++;
+		}
+		else
+		{
+			result[element] = 1;
+		}
+	});
+	return result;
+}
